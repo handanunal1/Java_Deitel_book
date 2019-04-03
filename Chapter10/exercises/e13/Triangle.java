@@ -1,3 +1,10 @@
+/**
+ * Exercise 10.13 
+ * 
+ * Author: Handan Unal
+ * 
+ */
+
 package exercises.e13;
 
 public class Triangle extends TwoDimensionalShape {
@@ -32,5 +39,6 @@ public class Triangle extends TwoDimensionalShape {
 		// TODO Auto-generated method stub
 		return (getWidth()*getHeight())/2;
 	}
+	
 
 }
