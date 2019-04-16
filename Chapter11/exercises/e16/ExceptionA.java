@@ -1,5 +1,5 @@
 /**
- *Exercise 11.6 -  UsingExceptions
+ *Exercise 11.6 -  Catching Exceptions with Superclass exception
  * 
  * Author: Handan Unal
  * 
