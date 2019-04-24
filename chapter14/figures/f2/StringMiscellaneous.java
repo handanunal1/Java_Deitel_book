@@ -1,5 +1,5 @@
 /**
- *Exercise 14.2 -  StringMiscellaneous
+ *Figures 14.2 -  StringMiscellaneous
  * 
  * Author: Handan Unal
  * 
