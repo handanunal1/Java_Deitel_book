@@ -1,5 +1,5 @@
 /**
- *Figures.f23 -   ValidateInput
+ *Figures.f23 -   RegexSubstitution
  * 
  * Author: Handan Unal
  * 
