@@ -33,11 +33,12 @@ public class TextAnalysis {
 
 			if (arrayLetters[i] > 0) {
 				character = (char) (i + 97);
-
 				System.out.println(character + " is used " + arrayLetters[i] + "times");
 			}
 
 		}
+
+		scanner.close();
 
 	}
 
