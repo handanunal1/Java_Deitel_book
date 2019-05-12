@@ -6,16 +6,10 @@
  */
 package exercises.e27;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.awt.BorderLayout;
-import java.awt.List;
-import java.io.IOException;
 
 public class SpamScanner {
 
@@ -25,30 +19,28 @@ public class SpamScanner {
 		Scanner scannerFile = new Scanner(file);
 		while (scannerFile.hasNextLine()) {
 			arrayListSpam.add(scannerFile.nextLine().trim());
-
 		}
-		System.out.println("Please input the path of your mail txt: ");
+
 		int spamWordCounter = 0;
 		scannerFile.close();
-		scannerFile = new Scanner(System.in);
-		String path = scannerFile.nextLine();
-		if (path != null) {
-			File fileMail = new File(path);
-			scannerFile.close();
-			scannerFile = new Scanner(fileMail);
-			while (scannerFile.hasNextLine()) {
+		System.out.println("Spam Mail:");
+		File fileMail = new File("C:\\dev\\java\\workspace\\java-deitel\\chapter14\\exercises\\e27\\fileName.txt");
+		scannerFile.close();
+		scannerFile = new Scanner(fileMail);
+		while (scannerFile.hasNextLine()) {
+			String newLine = scannerFile.nextLine();
+			System.out.println(newLine);
 
-				String newLine = scannerFile.nextLine();
-				for (String spamToken : arrayListSpam) {
-					if (newLine.trim().toLowerCase().contains(spamToken.toLowerCase())) {
-						spamWordCounter++;
-					}
+			for (String spamToken : arrayListSpam) {
+				if (newLine.trim().toLowerCase().contains(spamToken.toLowerCase())) {
+					spamWordCounter++;
 				}
 			}
-
 		}
 
 		scannerFile.close();
-		System.out.println("Your mail's spam score:" + spamWordCounter);
+		System.out.println("");
+		System.out.println("*** Your mail's spam score: ***");
+		System.out.println("                " + spamWordCounter);
 	}
 }
