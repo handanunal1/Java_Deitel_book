@@ -36,15 +36,36 @@ public class JFileChooserDemo extends JFrame {
 			builder.append(String.format("Last modified: %s%n", Files.getLastModifiedTime(path)));
 			builder.append(String.format("Size: %s%n", Files.size(path)));
 			builder.append(String.format("Path: %s%n", path));
-			builder.append(String.format("Absolute path: %s%n",   path.toAbsolutePath())); 
+			builder.append(String.format("Absolute path: %s%n", path.toAbsolutePath()));
+
+			if (Files.isDirectory(path)) {
+				builder.append(String.format("%nDirectory contents:%n"));
+				DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path);
+
+				for (Path p : directoryStream) {
+					builder.append(String.format("%s%n", p));
+				}
+				outputArea.setText(builder.toString()); // display String content
+			}
+
+		} else {
+			JOptionPane.showMessageDialog(this, path.getFileName() + " does not exist.", "ERROR",
+					JOptionPane.ERROR_MESSAGE);
 		}
 
 	}
 
 	private Path GetFileOrDirectoryPath() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
+		JFileChooser jfilechooser = new JFileChooser();
+		jfilechooser.setFileSelectionMode ( JFileChooser.FILES_AND_DIRECTORIES) ;
+		int result = jfilechooser.showOpenDialog(this);
+		if(result == jfilechooser.CANCEL_OPTION)
+		{
+			System.exit(1);
+		}
+
+		return jfilechooser.getSelectedFile().toPath();
+	}
 
 }
