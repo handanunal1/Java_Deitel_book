@@ -1,5 +1,10 @@
 package chapter16.figures.f14;
-
+/**
+ * Figures 16.14 EmptyStackException;
+ * 
+ * Author: Handan Unal
+ * 
+ */
 import java.util.EmptyStackException;
 import java.util.Stack;
 
@@ -29,10 +34,11 @@ public class StackTest {
 				removedObject = stack.pop();
 				System.out.println("Removed object "+removedObject);
 				printstack(stack);
+				
 			}
 			
 		} catch (EmptyStackException emptysException) {
-			// TODO: handle exception
+			emptysException.printStackTrace();
 		}
 	}
 
