@@ -34,6 +34,8 @@ public class IntStreamOperations {
 		IntStream.of(values).filter(value -> value % 2 == 1).sorted().forEach(value -> System.out.print(value + " "));
 		System.out.println("\nSum of integers from 1 to 10: " + IntStream.range(1, 10).sum());
 		System.out.println("Sum of integers from 1 to 10: " + IntStream.rangeClosed(1, 10).sum());
+		
+		System.out.println(IntStream.of(values).summaryStatistics());
 
 	}
 
