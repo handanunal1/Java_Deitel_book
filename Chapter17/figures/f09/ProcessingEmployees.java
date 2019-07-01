@@ -8,7 +8,9 @@
 package chapter17.figures.f09;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class ProcessingEmployees {
 
@@ -22,7 +24,14 @@ public class ProcessingEmployees {
 
 		System.out.println("Complete Employee List");
 		list.stream().forEach(System.out::println);
-		
+
+		Predicate<Employee> fourToSixHundred = e -> (e.getSalary() >= 400 && e.getSalary() <= 600);
+
+		System.out.println("Employees earning $400-$600 per month sorted by salary:");
+				list.stream().filter(fourToSixHundred).sorted(Comparator.comparing(Employee::getSalary)).forEach(System.out::println);
+				
+				
+				System.out.println("First employee who earns $4000-$6000:\n"+list.stream().filter(fourToSixHundred).findFirst().get());
 
 	}
 
