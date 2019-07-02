@@ -44,6 +44,13 @@ public class ProcessingEmployees {
 		
 		System.out.println("Employees in descending order by last name than first: ");
 		list.stream().sorted(LastThanFirst.reversed()).forEach(System.out::println);
+		
+		
+		System.out.println("Unique employee lastNames");
+		list.stream().map(Employee::getLastName).distinct().sorted().forEach(System.out::println);
+		
+		System.out.println("Employee names in order by last name than first name");
+		list.stream().sorted(LastThanFirst).map(Employee::toString).forEach(System.out::println);
 	}
 
 }
