@@ -42,6 +42,18 @@ public class ProcessingEmployees {
 
 		employeeCountByDepartmant
 				.forEach((departmant, count) -> System.out.println(departmant + " departmant has " + count + " count"));
+		
+		
+		System.out.println("Sum of salaries (via sum method)");
+		System.out.println(list.stream().mapToDouble(Employee::getSalary).sum());
+		
+		System.out.println("Sum of salaries (via reduce method)");
+		System.out.println(list.stream().mapToDouble(Employee::getSalary).reduce(0,(value1,value2)-> value1+value2));
+		
+		System.out.println("Average of employee salaries");
+		System.out.printf("%.2f%n",list.stream().mapToDouble(Employee::getSalary).average().getAsDouble());
+		
+		
 	}
 
 }
