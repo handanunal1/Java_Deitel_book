@@ -28,10 +28,11 @@ public class ProcessingEmployees {
 		Predicate<Employee> fourToSixHundred = e -> (e.getSalary() >= 400 && e.getSalary() <= 600);
 
 		System.out.println("Employees earning $400-$600 per month sorted by salary:");
-				list.stream().filter(fourToSixHundred).sorted(Comparator.comparing(Employee::getSalary)).forEach(System.out::println);
-				
-				
-				System.out.println("First employee who earns $4000-$6000:\n"+list.stream().filter(fourToSixHundred).findFirst().get());
+		list.stream().filter(fourToSixHundred).sorted(Comparator.comparing(Employee::getSalary))
+				.forEach(System.out::println);
+
+		System.out.println(
+				"First employee who earns $4000-$6000:\n" + list.stream().filter(fourToSixHundred).findFirst().get());
 
 	}
 

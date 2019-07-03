@@ -10,8 +10,10 @@ package chapter17.figures.f12;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class ProcessingEmployees {
 
@@ -41,16 +43,27 @@ public class ProcessingEmployees {
 		Comparator<Employee> LastThanFirst = Comparator.comparing(byLastName).thenComparing(byFirstName);
 		System.out.println("Employees in ascending order by last name than first: ");
 		list.stream().sorted(LastThanFirst).forEach(System.out::println);
-		
+
 		System.out.println("Employees in descending order by last name than first: ");
 		list.stream().sorted(LastThanFirst.reversed()).forEach(System.out::println);
-		
-		
+
 		System.out.println("Unique employee lastNames");
 		list.stream().map(Employee::getLastName).distinct().sorted().forEach(System.out::println);
-		
+
 		System.out.println("Employee names in order by last name than first name");
 		list.stream().sorted(LastThanFirst).map(Employee::toString).forEach(System.out::println);
+
+		System.out.println("Group employees by the Departmant");
+
+		Map<String, List<Employee>> groupedByDepartmant = list.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartmant));
+
+		groupedByDepartmant.forEach((departmant, employeesInDepartmant) -> {
+
+			System.out.println(departmant);
+			employeesInDepartmant.forEach(employee -> System.out.printf("    %s\n", employee));
+
+		});
 	}
 
 }
