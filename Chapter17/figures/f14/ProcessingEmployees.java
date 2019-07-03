@@ -25,7 +25,6 @@ public class ProcessingEmployees {
 
 		List<Employee> list = Arrays.asList(employees);
 
-
 		Map<String, List<Employee>> groupedByDepartmant = list.stream()
 				.collect(Collectors.groupingBy(Employee::getDepartmant));
 
@@ -35,6 +34,14 @@ public class ProcessingEmployees {
 			employeesInDepartmant.forEach(employee -> System.out.printf("    %s\n", employee));
 
 		});
+
+		// count number of Employees in each department
+		System.out.println();
+		Map<String, Long> employeeCountByDepartmant = list.stream()
+				.collect(Collectors.groupingBy(Employee::getDepartmant, Collectors.counting()));
+
+		employeeCountByDepartmant
+				.forEach((departmant, count) -> System.out.println(departmant + " departmant has " + count + " count"));
 	}
 
 }
