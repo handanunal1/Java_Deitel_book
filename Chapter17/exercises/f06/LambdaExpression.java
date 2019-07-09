@@ -1,5 +1,5 @@
 /**
- * Exercises 17.06LambdaExpression
+ * Exercises 17.06 LambdaExpression
  * 
  * Author: Handan Unal
  * 

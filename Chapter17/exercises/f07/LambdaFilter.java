@@ -9,11 +9,18 @@ public class LambdaFilter {
 
 	public static void main(String[] args) {
 		
-		Integer [] arrayInteger = {2,3,4,22,3,445,933,192,12};
+		Integer [] arrayInteger = {2,933,192,12,9};
 		List<Integer> arrayList = Arrays.asList(arrayInteger);
 		
-		 arrayList.stream().filter(value-> value % 2 != 0).sum();
+	//	 arrayList.stream().filter(value-> value % 2 != 0).sum();
 		
+		 
+		 int sum = arrayList.stream()
+		            .filter(value -> value % 2 != 0)
+		            .mapToInt(Integer::intValue)
+		            .sum();
+		 
+		 System.out.println("Sum of odd numbers: " + sum);
 	
 	}
 
