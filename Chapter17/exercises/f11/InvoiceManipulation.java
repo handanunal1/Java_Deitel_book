@@ -2,6 +2,7 @@ package chapter17.exercises.f11;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.function.Predicate;
 
 import chapter17.figures.f12.Employee;
 
@@ -20,6 +21,13 @@ public class InvoiceManipulation {
 		
 		invoiceList.stream().sorted(Comparator.comparing(Invoice::getPartDescription))
 		.forEach(System.out::println);
+		
+		Predicate<Invoice> twoToFiveHundred = e -> (e.getPrice()*e.getQuantity() >= 200 &&e.getPrice()*e.getQuantity() <= 500);
+		
+		System.out.println("Invoice between 200 and 500;");
+		invoiceList.stream().filter(twoToFiveHundred).sorted(Comparator.comparing(Invoice::getPartDescription))
+		.forEach(System.out::println);
+
 
 	}
 
