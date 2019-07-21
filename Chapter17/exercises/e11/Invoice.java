@@ -1,4 +1,11 @@
-package chapter17.exercises.f11;
+/**
+ * Exercise 17.11  Invoice
+ * 
+ * Author: Handan Unal
+ *  (the output is different)
+ * 
+ */
+package chapter17.exercises.e11;
 
 public class Invoice {
 
@@ -55,6 +62,6 @@ public class Invoice {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.getPartNumber()+ " " +this.partDescription;
+		return this.getPartNumber()+ " " +this.partDescription + " invoice " + this.getPrice()*this.getQuantity();
 	}
 }

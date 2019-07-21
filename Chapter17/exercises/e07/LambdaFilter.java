@@ -1,4 +1,4 @@
-package chapter17.exercises.f07;
+package chapter17.exercises.e07;
 
 
 import java.util.Arrays;

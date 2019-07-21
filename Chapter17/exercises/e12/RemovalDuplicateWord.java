@@ -5,7 +5,7 @@
  *  (the output is different)
  * 
  */
-package chapter17.exercises.f12;
+package chapter17.exercises.e12;
 
 import java.io.IOException;
 import java.util.Arrays;

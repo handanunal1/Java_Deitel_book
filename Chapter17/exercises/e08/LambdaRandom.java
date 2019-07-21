@@ -8,7 +8,7 @@
  *  Returns a map, and In the map, each element is on output.
  */
 
-package chapter17.exercises.f08;
+package chapter17.exercises.e08;
 
 import java.security.SecureRandom;
 import java.util.function.Function;

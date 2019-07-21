@@ -4,7 +4,7 @@
  * Author: Handan Unal
  * 
  */
-package chapter17.exercises.f06;
+package chapter17.exercises.e06;
 
 import java.util.Arrays;
 import java.util.List;
