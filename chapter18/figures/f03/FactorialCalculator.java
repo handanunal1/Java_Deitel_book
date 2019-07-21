@@ -1,11 +1,17 @@
+/**
+ * Exercise 18.03 Factorial
+ * 
+ * Author: Handan Unal
+ * 
+ */
 package chapter18.figures.f03;
 
 public class FactorialCalculator {
 
 	public static void main(String[] args) {
 
-		for (int i = 1; i < 21; i++) {
-			System.out.println("Number: "+i+ "Factorial of number: " + Factorial(i));
+		for (int i = 0; i <= 21; i++) {
+			System.out.println("Number: " + i + " -> "+ i+"!: " + Factorial(i));
 		}
 
 	}
