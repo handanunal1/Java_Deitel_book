@@ -13,6 +13,12 @@ public class Mystery {
 		Mystery mystery = new Mystery();
 		int result = mystery.mystery(1, 3);
 		System.out.println(result);
+		
+		
+		
+		
+		int resultSum = mystery.sum(3);
+		System.out.println(resultSum);
 
 	}
 
@@ -21,6 +27,15 @@ public class Mystery {
 			return a;
 		else
 			return a + mystery(a, b - 1);
+	}
+
+	public int sum(int n) {
+		if (n == 0)
+			return 0;
+		else
+			
+			//return n+ sum(n) -> The function does not converge on the base case
+			return n + sum(n-1);
 	}
 
 }
