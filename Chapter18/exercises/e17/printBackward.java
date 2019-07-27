@@ -1,5 +1,5 @@
 /**
- * Exercise 18.16  PrintArray
+ * Exercise 18.17  printBackward 
  * 
  * Author: Handan Unal  
  *
