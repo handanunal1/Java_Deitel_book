@@ -1,5 +1,5 @@
 /**
- * Exercise 19.05  LinearSearchTest
+ * Exercise 19.05   BubbleSort
  */
 package chapter19.exercises.f05;
 
