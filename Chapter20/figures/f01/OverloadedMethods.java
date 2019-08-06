@@ -18,26 +18,33 @@ public class OverloadedMethods {
 		printArray(characterArray);
 	}
 
-	public static void printArray(Integer[] integerArray) {
-		for (Integer element : integerArray) {
+//	public static void printArray(Integer[] integerArray) {
+//		for (Integer element : integerArray) {
+//			System.out.print(element + " ");
+//		}
+//		System.out.println();
+//	}
+//
+//	public static void printArray(Double[] doubleArray) {
+//		for (Double element : doubleArray) {
+//			System.out.print(element + " ");
+//		}
+//		System.out.println();
+//	}
+//
+//	public static void printArray(Character[] characterArray) {
+//		for (Character Element : characterArray) {
+//			System.out.print(Element + " ");
+//		}
+//		System.out.println();
+//
+//	}
+
+	public static <T> void printArray(T[] inputArray) {
+		for (T element : inputArray) {
 			System.out.print(element + " ");
 		}
 		System.out.println();
-	}
-
-	public static void printArray(Double[] doubleArray) {
-		for (Double element : doubleArray) {
-			System.out.print(element + " ");
-		}
-		System.out.println();
-	}
-
-	public static void printArray(Character[] characterArray) {
-		for (Character Element : characterArray) {
-			System.out.print(Element + " ");
-		}
-		System.out.println();
 
 	}
-
 }
