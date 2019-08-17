@@ -25,6 +25,9 @@ public class RawTypeTest {
 
 		testPush("rawTypeStack2", rawTypeStack2, doubleElements);
 		testPop("rawTypeStack2", rawTypeStack2);
+
+		testPush("integerStack", integerStack, integerElements);
+		testPop("integerStack", integerStack);
 	}
 
 	public static <T> void testPush(String name, Stack<T> stack, T[] elements) {
@@ -44,15 +47,12 @@ public class RawTypeTest {
 
 			System.out.println("Popping elements from " + name);
 			T popValue;
-			
-			while(true) {
+
+			while (true) {
 				popValue = stack.pop();
 				System.out.println(popValue);
 			}
-			
-		
-			
-			
+
 		} catch (EmptyStackException emptystackexception) {
 			System.out.println();
 			emptystackexception.printStackTrace();
