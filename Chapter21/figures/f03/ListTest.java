@@ -14,7 +14,20 @@ public class ListTest {
 		list.print();
 	
 	
-	
+		try
+		 {
+		int removedItem = list.removeFromFront();
+		System.out.printf("%n%d removed%n", removedItem);
+		list.print();
+		
+		
+		removedItem = list.removeFromBack();
+		System.out.printf("%n%d removed%n", removedItem);
+		list.print();
+		 }
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	
 	
