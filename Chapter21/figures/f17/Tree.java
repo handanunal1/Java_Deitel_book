@@ -1,6 +1,9 @@
 package chapter21.figures.f17;
-
- class TreeNode<T extends Comparable<T>> {
+/**
+ * Figure 21.17   TreeNode / Tree
+ *  @author Handan
+ */
+class TreeNode<T extends Comparable<T>> {
 
 	TreeNode<T> leftNode;
 	T data;
@@ -11,7 +14,7 @@ package chapter21.figures.f17;
 		leftNode = rightNode = null;
 	}
 
-	public void Inser(T insertvalue) {
+	public void Insert(T insertvalue) {
 		if (insertvalue.compareTo(data) < 0) {
 			if (leftNode == null)
 				leftNode = new TreeNode<T>(insertvalue);
@@ -23,22 +26,68 @@ package chapter21.figures.f17;
 				rightNode = new TreeNode<T>(insertvalue);
 			else
 				rightNode.Insert(insertvalue);
-			
+
 		}
 	}
 
-	private void Insert(T insertvalue) {
-		// TODO Auto-generated method stub
-		
+}
+
+public class Tree<T extends Comparable<T>> {
+	private TreeNode<T> root;
+
+	public Tree() {
+		root = null;
+	}
+
+	public void insertNode(T insertValue) {
+		if (root == null) {
+			root = new TreeNode<T>(insertValue);
+		} else {
+			root.Insert(insertValue);
+		}
+	}
+
+	public void preorderTraversal() {
+		preorderHelper(root);
+	}
+
+	private void preorderHelper(TreeNode<T> node) {
+		if (node == null) {
+			return;
+		}
+		System.out.print(node.data+ " ");
+		preorderHelper(node.leftNode);
+		preorderHelper(node.rightNode);
+
+	}
+
+	public void inorderTraversal() {
+		inorderHelper(root);
+	}
+
+	private void inorderHelper(TreeNode<T> node) {
+		if (node == null) {
+			return;
+		}
+
+		inorderHelper(node.leftNode);
+		System.out.print(node.data+ " ");
+		inorderHelper(node.rightNode);
+
+	}
+
+	public void postorderTraversal() {
+		postorderHelper(root);
+	}
+
+	private void postorderHelper(TreeNode<T> node) {
+		if (node == null) {
+			return;
+		}
+
+		postorderHelper(node.leftNode);
+		postorderHelper(node.rightNode);
+		System.out.print(node.data+ " ");
+
 	}
 }
- public class Tree<T extends Comparable<T>>{
-	 private TreeNode<T> root;
-	 
-	public Tree(){
-		root = null;
-	 }
-	
-	
-	
- }

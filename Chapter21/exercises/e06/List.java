@@ -1,4 +1,4 @@
-package chapter21.figures.f03;
+package chapter21.exercises.e06;
 
 /**
  * Exercise 21.08 ListNode
@@ -121,4 +121,10 @@ public class List<T> {
 		}
 		System.out.println();
 	}
+	
+	
+	
+
+	
+	
 }
